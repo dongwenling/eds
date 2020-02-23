@@ -1,0 +1,34 @@
+下载镜像，从远程镜像仓库中下载镜像,默认情况下，会从docker hub中下载
+docker image pull
+下载某个仓库中版本为latest的镜像
+docker image pull alpine:latest
+镜像的删除(如果被删除的镜像上存在运行状态的容器，那么删除操作不会被允许。再次执行删除镜像命令之前，需要停止并删除该镜像相关的全部容器。)
+docker image rm imageid
+强制删除镜像
+docker image rm  -f imageid
+删除某个版本的镜像
+docker image rm imagename:latest
+镜像全部的Id列表
+docker image ls -q
+可以做为参数传输给docker image rm ,会删除本地系统的全部镜像
+docker image rm $(docker image ls -q) -f
+镜像存放的位置
+/var/lib/docker
+移除全部的悬虚镜像
+docker image prune
+查看本地主机docker上的存储的镜像
+docker image ls
+查看版本为latest的所有的镜像
+docker image ls --filter=reference="*:latest" .
+查看下载的镜像的大小
+docker image ls --format {{.Size}}
+返回全部镜像，但是只显示仓库、标签和大小信息
+docker image ls --format "{{.Repository}}{{.Tag}}   {{.Size}}"
+只显示官方的搜索出来的镜像
+docker search mysql --filter "is-official=true"
+查看镜像的层数据和元数据
+docker image inspect docker
+查看镜像的散列值
+docker image ls --digests xxximagename
+根据散列值拉取镜像
+docker image pull ubuntu@sha256:04d48df82c938587820d7b6006f5071dbbffceb7ca01d2814f81857c631d44df
