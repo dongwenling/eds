@@ -2,6 +2,8 @@
 docker container run
 启动容器，并且运行Bash shell
 docker container run -it ubuntu /bin/bash
+启动容器，并且给他起名
+docker container run --name ub1 -it ubuntu:latest /bin/bash
 启动容器，连接到容器10s,然后退出
 docker container run alpine:latest sleep 10
 停止容器
@@ -13,3 +15,11 @@ docker container rm xxx
 查看docker的状态
 service docker status
 systemctl is-active docker
+输入exit，则会杀死进程，容器终止，输入Ctrl+PQ,则会退出容器，不会终止容器，保证容器在后台运行
+进入容器(根据上面创建的容器，通过以下方式进入之后，按exit并不会导致容器的终止，因为原bash进程还在)
+docker container exec -it containername /bin/bash
+列出全部运行中的容器
+docker container ls
+docker ps
+查看全部，包括停止状态的容器
+docker container ls -a
