@@ -32,3 +32,5 @@ docker image inspect docker
 docker image ls --digests xxximagename
 根据散列值拉取镜像
 docker image pull ubuntu@sha256:04d48df82c938587820d7b6006f5071dbbffceb7ca01d2814f81857c631d44df
+通过inspect来查看镜像默认的自动行为
+docker image inspect imagexxx

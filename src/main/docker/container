@@ -4,6 +4,8 @@ docker container run
 docker container run -it ubuntu /bin/bash
 启动容器，并且给他起名
 docker container run --name ub1 -it ubuntu:latest /bin/bash
+-d，后台启动方式不会将当前终端连接到容器当中去
+docker container run -d --name ub1 -it ubuntu:latest /bin/bash
 启动容器，连接到容器10s,然后退出
 docker container run alpine:latest sleep 10
 停止容器
@@ -28,3 +30,5 @@ docker container run --name always --restart always alpine
 启动docker，并让容器自动重启，但是不会在docker daemon重启后重启
 重启docker
 systemctl restart docker
+删除全部的容器，包括运行状态的
+docker container rm $(docker container ls -aq) -f
