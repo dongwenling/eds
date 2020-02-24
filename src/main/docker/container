@@ -23,3 +23,6 @@ docker container ls
 docker ps
 查看全部，包括停止状态的容器
 docker container ls -a
+启动docker,并让容器自动重启，就算docker重启后也可以
+docker container run --name always --restart always alpine
+启动docker，并让容器自动重启，但是不会在docker daemon重启后重启
