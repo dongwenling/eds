@@ -4,3 +4,6 @@ docker image tag web:latest xxx/web:latest
 docker image build .
 如果想给镜像起名字
 docker image build . xxx/webchengxu
+如果有镜像层，则使用缓存的镜像层，并继续下一个指令，如果加上--nocache=true的话，则强制忽略对缓存镜像层的使用/
+例如，有可能 Dockerfile 中的 COPY . /src 指令没有发生变化，但是被复制的目录中的内容已经发生变化了。
+docker image build --nocache=true . xxx/webchengxu
