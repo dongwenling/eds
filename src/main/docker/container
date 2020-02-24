@@ -10,3 +10,6 @@ docker container stop XXX
 docker container start xxx
 删除容器
 docker container rm xxx
+查看docker的状态
+service docker status
+systemctl is-active docker
