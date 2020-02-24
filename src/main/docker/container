@@ -32,3 +32,5 @@ docker container run --name always --restart always alpine
 systemctl restart docker
 删除全部的容器，包括运行状态的
 docker container rm $(docker container ls -aq) -f
+如何查看docker容器的启动日志
+docker logs xxx

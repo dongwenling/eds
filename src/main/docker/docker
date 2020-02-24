@@ -1,0 +1,6 @@
+为镜像重新打一个标签
+docker image tag web:latest xxx/web:latest
+通过Dockerfile来生成镜像
+docker image build .
+如果想给镜像起名字
+docker image build . xxx/webchengxu
