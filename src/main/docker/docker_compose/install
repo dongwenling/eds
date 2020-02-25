@@ -1,0 +1,12 @@
+compose安装
+1、下载https://github.com/docker/compose/releases
+2、给权限 chmod +x /usr/local/bin/docker-compose
+3、查看版本docker-compose --version
+
+启动docker-compose程序
+docker-compose up &
+如果想指定yml文件则
+docker-compose up -f xxx.yml &
+如果想在后台执行
+docker-compose up -d
+
