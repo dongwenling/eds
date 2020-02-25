@@ -1,0 +1,4 @@
+已：为分隔符，输出1、2、3、4列
+awk -F: '{print $1,$2,$3,$4} /etc/passwd
+打印第一行
+awk  'NR==1{print $0}' /etc/passwd
