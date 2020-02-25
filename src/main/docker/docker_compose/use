@@ -1,0 +1,19 @@
+//docker-compose相关的命令
+启动docker-compose应用(使用&可以在终端打出详细的信息)
+docker-compose up &
+如果想指定yml文件则
+docker-compose up -f xxx.yml &
+如果想在后台执行
+docker-compose up -d
+查看应用状态,列出compose的各个容器
+docker-compose ps
+查看各个服务（容器）内运行的进程
+docker-compose top
+对于已经停止的container，可以进行删除，
+docker-compose rm
+重启
+docker-compose restart
+停止和删除应用，删除的是容器和网络，但是不会删除卷和镜像
+docker-compose down
+只是停止compose相关的容器，但是不会删除
+docker-compose stop
