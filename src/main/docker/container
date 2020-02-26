@@ -1,6 +1,6 @@
 启动容器
 docker container run
-启动容器，并且运行Bash shell
+启动容器，并且运行Bash shell（t绑定到伪终端，i始终让容器的标准输入打开）
 docker container run -it ubuntu /bin/bash
 启动容器，并且给他起名
 docker container run --name ub1 -it ubuntu:latest /bin/bash
@@ -10,6 +10,8 @@ docker container run -d --name ub1 -it ubuntu:latest /bin/bash
 docker container run alpine:latest sleep 10
 停止容器
 docker container stop （XXIP or XXXname）
+新建容器(停止状态，需要start启动)
+docker create xxx
 启动容器
 docker container start xxx
 删除容器
