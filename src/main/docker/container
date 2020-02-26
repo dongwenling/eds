@@ -22,6 +22,9 @@ systemctl is-active docker
 输入exit，则会杀死进程，容器终止，输入Ctrl+PQ,则会退出容器，不会终止容器，保证容器在后台运行
 进入容器(根据上面创建的容器，通过以下方式进入之后，按exit并不会导致容器的终止，因为原bash进程还在)
 docker container exec -it containername /bin/bash
+可以在容器中查看容器中的用户和进程信息
+w
+ps -ef
 列出全部运行中的容器
 docker container ls
 docker ps
@@ -36,3 +39,12 @@ systemctl restart docker
 docker container rm $(docker container ls -aq) -f
 如何查看docker容器的启动日志
 docker logs xxx
+清除掉容器中所有的处于停止状态的容器
+docker container prune
+容器的导出和导入
+docker export -o mysql_02.26.tar mysql
+docker import mysql_02.26.tar mysql:latest(有点类似于镜像的load,load导入完整的存储文件，import导入快照)
+查看容器的进程
+docker top xxx
+查看容器的统计信息
+docker stats xxx
