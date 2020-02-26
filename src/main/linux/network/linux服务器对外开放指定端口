@@ -1,3 +1,4 @@
+参考文献：https://www.cnblogs.com/miaoying/p/11535945.html
 eg:为了能够远程访问远程访问这台机器上的mysql,需要开放3306端口
 1、首先通过service iptables status查看是否安装iptables.service
 如果出现下面的提示，则需要安装
