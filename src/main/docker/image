@@ -12,6 +12,8 @@ docker image rm imagename:latest
 docker image ls -q
 可以做为参数传输给docker image rm ,会删除本地系统的全部镜像
 docker image rm $(docker image ls -q) -f
+清除dangling镜像
+docker image prune
 镜像存放的位置
 /var/lib/docker
 移除全部的悬虚镜像
@@ -38,3 +40,14 @@ docker image inspect imagexxx
  docker tag redis:alpine redisuse:1.0.0
  查看镜像的详细消息，如果想指定某个值得话，需要使用命令
   docker image inspect -f {{".RootFS"}} cdb6af7216c6
+
+注意：假如网络不好时，应该如何导入镜像
+首先从一个网络好的服务器上导出镜像
+docker save -o ubuntu_02.26.tar ubuntu
+然后再导入不好的那台服务器上去
+docker load -i ubuntu_02.26.tar/docker load <  ubuntu_02.26.tar
+在已有的镜像上，创建新的镜像（在由镜像启动的容器里面，修改了内容，然后把容器提交，生成一个新的镜像）
+docker commit  -m "add a new file" -a "dongwenling" containerId ubuntutest:v1.0.1
+上传镜像
+docker tag mysql:latest dongwenling/mysql:v1.0.0
+docker push dongwenling/mysql:v1.0.0
