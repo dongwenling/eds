@@ -17,7 +17,7 @@ docker image rm $(docker image ls -q) -f
 移除全部的悬虚镜像
 docker image prune
 查看本地主机docker上的存储的镜像
-docker image ls
+docker image ls/docker images
 查看版本为latest的所有的镜像
 docker image ls --filter=reference="*:latest" .
 查看下载的镜像的大小
@@ -34,3 +34,7 @@ docker image ls --digests xxximagename
 docker image pull ubuntu@sha256:04d48df82c938587820d7b6006f5071dbbffceb7ca01d2814f81857c631d44df
 通过inspect来查看镜像默认的自动行为
 docker image inspect imagexxx
+如何给镜像打标签（镜像ID相同d）
+ docker tag redis:alpine redisuse:1.0.0
+ 查看镜像的详细消息，如果想指定某个值得话，需要使用命令
+  docker image inspect -f {{".RootFS"}} cdb6af7216c6
