@@ -1,0 +1,12 @@
+删除未载入到容器或者服务的卷
+docker volume prune
+删除指定的卷
+docker volume run
+注意：两种方式都不可以删除正在使用的卷
+新建一个卷
+docker volume create myvol
+将卷挂载到容器(这样在主机上添加文件容器里面也有了，反过来同理，即使容器被删了，数据还存储在volume当中)
+docker container run -dit -v myvol:/mydata --name ubuntuvolume ubuntu
+注意：创建一个新的容器要使用同样的数据，按照同样的方式挂载数据卷即可
+查看卷是否挂载在容器上
+docker container inspect xxx|grep volumename
