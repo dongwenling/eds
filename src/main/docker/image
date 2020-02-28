@@ -51,3 +51,5 @@ docker commit  -m "add a new file" -a "dongwenling" containerId ubuntutest:v1.0.
 上传镜像
 docker tag mysql:latest dongwenling/mysql:v1.0.0
 docker push dongwenling/mysql:v1.0.0
+计时
+time docker run alpine echo 123
