@@ -14,3 +14,7 @@ brctl show(可以查看网桥，创建一个网络会对应创建一个新的网
 运行一个新的 Web 服务容器，并将容器 80 端口映射到 Docker 主机的 5000 端口。
 docker container run -d --name web  --network localnet --p 5000:80 nginx
 查看端口映射
+docker port XXX
+docker network rm 删除docker主机上的指定的网络
+docker network prune 删除docker主机上未被使用的网络
+docker network inspect 查看docker网络的详细配置信息
