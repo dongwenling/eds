@@ -1,0 +1,20 @@
+在 Linux 主机上，Docker 网络由 Bridge 驱动创建，而 Bridge 底层是基于 Linux 内核中久经考验达 15 年之久的 Linux Bridge 技术。
+在linux docker主机上，默认的bridge网络被映射到内核的docker0的linux网桥，可以通过docker network inspect查看
+docker network inspect bridge|grep bridge.name
+创建网络
+docker create -d bridge nettest
+“bridge”网络在主机内核中映射到名为“docker0”的 Linux 网桥，该网桥可以通过主机以太网接口的端口映射进行反向关联。
+接下来通过使用 Linux (?)brctl 工具来查看系统中的 Linux 网桥。小伙伴可能需要通过命令 apt-get install bridge-utils 来安装 brctl 二进制包，或者根据所使用的 Linux 发行版选择合适的命令。
+brctl show(可以查看网桥，创建一个网络会对应创建一个新的网桥)
+创建容器关联网络（可以通过inspect命令查看是否关联到对应的网络当中去，而且能看到容器的IP）
+ docker container run -it --name netubuntest1  --network nettest ubuntu /bin/bash
+ docker container run -it --name netubuntest2  --network nettest ubuntu /bin/bash
+可以在容器2里面ping容器1，可以通过“netubuntest1”的容器名称来 ping 通的。这是因为新容器都注册到了指定的 Docker DNS 服务，所以相同网络中的容器可以解析其他容器的名称。
+注意：如果没有ping命令，则安装：1、apt-get update  2、apt install net-tools   # ifconfig 3、apt install iputils-ping     # ping
+运行一个新的 Web 服务容器，并将容器 80 端口映射到 Docker 主机的 5000 端口。
+docker container run -d --name web  --network localnet --p 5000:80 nginx
+查看端口映射
+docker port XXX
+docker network rm 删除docker主机上的指定的网络
+docker network prune 删除docker主机上未被使用的网络
+docker network inspect 查看docker网络的详细配置信息
