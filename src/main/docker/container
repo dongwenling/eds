@@ -51,3 +51,5 @@ docker stats xxx
 注意：1、容器的非持久化数据存储在/var/lib/docker下
       2、如何把宿主机上某个文件或者目录拷贝到容器里面
       docker cp index.html awesome_margulis:/usr/share/nginx/html/
+      3、把当前的目录挂载到容器的某个目录下
+      docker run -p 8083:8080 -v "$PWD":/var/jenkins_home jenkins
