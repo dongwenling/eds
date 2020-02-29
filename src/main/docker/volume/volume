@@ -10,3 +10,5 @@ docker container run -dit -v myvol:/mydata --name ubuntuvolume ubuntu
 注意：创建一个新的容器要使用同样的数据，按照同样的方式挂载数据卷即可
 查看卷是否挂载在容器上
 docker container inspect xxx|grep volumename
+短暂使用的容器，没必要保存它的数据卷,使用-rm
+docker run --name xxx -rm -p 80：80 -v "$PWD":/usr/local/ xxx

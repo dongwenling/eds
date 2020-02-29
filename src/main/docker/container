@@ -48,4 +48,6 @@ docker import mysql_02.26.tar mysql:latest(有点类似于镜像的load,load导�
 docker top xxx
 查看容器的统计信息
 docker stats xxx
-注意：容器的非持久化数据存储在/var/lib/docker下
+注意：1、容器的非持久化数据存储在/var/lib/docker下
+      2、如何把宿主机上某个文件或者目录拷贝到容器里面
+      docker cp index.html awesome_margulis:/usr/share/nginx/html/
