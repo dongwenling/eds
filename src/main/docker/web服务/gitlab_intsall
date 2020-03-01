@@ -1,0 +1,8 @@
+docker pull gitlab/gitlab-ce
+docker run --detach \
+    --hostname gitlab.example.com \
+    --publish 1443:443 --publish 18810:80 --publish 7003:22 \
+    --name gitlab --restart always \
+    --volume /app/docker/gitlab/config:/etc/gitlab \
+    --volume /app/docker/gitlab/logs:/var/log/gitlab \
+    --volume /app/docker/gitlab/data:/var/opt/gitlab gitlab/gitlab-ce

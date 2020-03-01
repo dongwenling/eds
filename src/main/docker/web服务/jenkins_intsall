@@ -1,0 +1,9 @@
+ docker run -p 8083:8080 -p 50000:50000 "$PWD":/var/jenkens_home -dit --name jenkinswen --privileged=true  jenkins
+  --privileged=true 使用特权，怕什么地方权限不足，安装不顺
+  注意：如何一直Jenkins一直在启动的状态，则
+  需要你进入jenkins的工作目录，打开
+  hudson.model.UpdateCenter.xml
+  把
+  http://updates.jenkins-ci.org/update-center.json
+  改成
+  http://mirror.xmission.com/jenkins/updates/update-center.json
