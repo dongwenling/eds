@@ -1,0 +1,6 @@
+read 可以输入多个参数
+read -p "请输入：" ip port war
+echo "IP:$ip"
+echo "端口:$port"
+echo "包：$war"
+指定只能输入一个-n 1
