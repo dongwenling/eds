@@ -1,0 +1,29 @@
+array_name=(ele1  ele2  ele3 ... elen)
+eg:
+abc=(12 34 "http://baidu.com")
+获取特定的值
+${arr[2]}
+获取所有的值
+${arr[*]}
+${arr[@]}
+获取数组的长度
+${#arr[*]}
+${#arr[@]}
+假如数组中某个元素是是字符串，如果想获取该元素的长度
+${#arr[2]}
+删除某个元素
+unset arr[1]
+eg:
+#!/bin/bash
+
+nums=(29 100 13)
+echo ${#nums[*]}
+
+#向数组中添加元素
+nums[10]="http://c.biancheng.net/shell/"
+echo ${#nums[@]}
+echo ${#nums[10]}
+
+#删除数组元素
+unset nums[1]
+echo ${#nums[*]}

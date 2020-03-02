@@ -1,0 +1,38 @@
+-n表示不换行
+#!/bin/bash
+
+name="Tom"
+age=20
+height=175
+weight=62
+
+echo -n "${name} is ${age} years old, "
+echo -n "${height}cm in height "
+echo "and ${weight}kg in weight."
+echo "Thank you!"
+结果：
+Tom is 20 years old, 175cm in height and 62kg in weight.
+Thank you!
+
+
+echo不会解析以\开头的转义字符
+[root@localhost ~]# echo "hello \nworld"
+hello \nworld
+
+可以加上-e，来解释转义字符（-c,echo不换行）
+echo -e "abc \c"
+eg:
+#!/bin/bash
+
+name="Tom"
+age=20
+height=175
+weight=62
+
+echo -e "${name} is ${age} years old, \c"
+echo -e "${height}cm in height \c"
+echo "and ${weight}kg in weight."
+echo "Thank you!"
+结果：
+Tom is 20 years old, 175cm in height and 62kg in weight.
+Thank you!
