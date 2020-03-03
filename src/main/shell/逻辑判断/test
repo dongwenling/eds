@@ -1,0 +1,76 @@
+test 命令比较奇葩，>、<、== 只能用来比较字符串，不能用来比较数字，比较数字需要使用 -eq、-gt 等选项；不管是比较字符串还是数字，test 都不支持 >= 和 <=。有经验的程序员需要慢慢习惯 test 命令的这些奇葩用法。
+#!/bin/bash
+
+read age
+
+if test $age -le 2; then
+    echo "婴儿"
+elif test $age -ge 3 && test $age -le 8; then
+    echo "幼儿"
+elif [ $age -ge 9 ] && [ $age -le 17 ]; then
+    echo "少年"
+elif [ $age -ge 18 ] && [ $age -le 25 ]; then
+    echo "成年"
+elif test $age -ge 26 && test $age -le 40; then
+    echo "青年"
+elif test $age -ge 41 && [ $age -le 60 ]; then
+    echo "中年"
+else
+    echo "老年"
+fi
+
+
+#!/bin/bash
+
+read filename
+read url
+
+if test -w $filename && test -n $url
+then
+    echo $url > $filename
+    echo "写入成功"
+else
+    echo "写入失败"
+fi
+
+
+#!/bin/bash
+
+read str1
+read str2
+
+#检测字符串是否为空
+if [ -z "$str1" ] || [ -z "$str2" ]
+then
+    echo "字符串不能为空"
+    exit 0
+fi
+
+#比较字符串
+if [ $str1 = $str2 ]
+then
+    echo "两个字符串相等"
+else
+    echo "两个字符串不相等"
+fi
+
+
+#!/bin/bash
+
+read str1
+read str2
+
+#检测字符串是否为空
+if [ -z "$str1" -o -z "$str2" ]  #使用 -o 选项取代之前的 ||
+then
+    echo "字符串不能为空"
+    exit 0
+fi
+
+#比较字符串
+if [ $str1 = $str2 ]
+then
+    echo "两个字符串相等"
+else
+    echo "两个字符串不相等"
+fi
