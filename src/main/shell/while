@@ -40,3 +40,12 @@ do
 done
 
 echo "The sum is: $sum"
+
+
+
+把一个文件每行都读入
+#！/bin/bash
+while  read str
+do
+  echo $str
+done < xx.txt
