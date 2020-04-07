@@ -7,4 +7,4 @@
 
 4   web   1小时  实践;
 
-mysql git linux shell 常见算法 1个月复习一次（1、2天）
+mysql git linux shell docker 常见算法 1个月复习一次（1、2天）
