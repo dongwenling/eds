@@ -12,3 +12,8 @@ mysql git linux shell docker maven nexus常见算法 1个月复习一次（1、2
 Jenkins界面看下
 sonar
 
+
+面试问题：
+1、高可用
+2、如何无感应更新
+3、不同的开发开发同一个项目，如何同步代码
