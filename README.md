@@ -22,3 +22,4 @@ sonar
 6、Jenkins常用的组件
 7、git的裸仓库|panpach
 8、对持续集成的理解
+9、Jenkins的备份
