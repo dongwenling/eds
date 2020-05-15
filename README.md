@@ -17,3 +17,8 @@ sonar
 1、高可用
 2、如何无感应更新
 3、不同的开发开发同一个项目，如何同步代码
+4、git fetch 与git pull的区别
+5、svn和git的区别
+6、Jenkins常用的组件
+7、git的裸仓库|panpach
+8、对持续集成的理解
