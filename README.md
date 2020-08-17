@@ -19,7 +19,7 @@ sonar
 3、不同的开发开发同一个项目，如何同步代码
 4、git fetch 与git pull的区别
 5、svn和git的区别
-6、Jenkins常用的组件
+6、Jenkins常用的组件 ant/git/gitlab api/pipeline/SSH Credentials Plugin/jacoco/Configuration Slicing 批量管理jobs
 7、git的裸仓库|panpach
 8、对持续集成的理解https://www.cnblogs.com/wysk/p/7517277.html
 9、Jenkins的备份
@@ -31,4 +31,5 @@ sonar
 15、inner join left join right join 区别
 16、oracle如何进行增量备份
 17、docker的优势
+
 
