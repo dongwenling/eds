@@ -30,6 +30,6 @@ sonar
 14、jenkins上有什么功能可以并行控制多台服务器
 15、inner join left join right join 区别
 16、oracle如何进行增量备份
-17、docker的优势
+17、docker的优势http://dockone.io/article/389
 
 
