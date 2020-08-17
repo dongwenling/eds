@@ -1,4 +1,4 @@
-使用 Docker 中的docker image build命令会读取 Dockerfile，并将应用程序容器化。
+COP使用 Docker 中的docker image build命令会读取 Dockerfile，并将应用程序容器化。
 Dockerfile 由一行行命令语句组成，并支持以 # 开头的注释行。例如：
 # Test web-app to use with Pluralsight courses and Docker Deep Dive book
 # Linux x64

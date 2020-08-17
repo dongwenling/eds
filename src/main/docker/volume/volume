@@ -1,7 +1,7 @@
 删除未载入到容器或者服务的卷
 docker volume prune
 删除指定的卷
-docker volume run
+docker volume rm
 注意：两种方式都不可以删除正在使用的卷
 新建一个卷
 docker volume create myvol
