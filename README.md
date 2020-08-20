@@ -22,7 +22,7 @@ sonar
 6、Jenkins常用的组件 ant/git/gitlab api/pipeline/SSH Credentials Plugin/jacoco/Configuration Slicing 批量管理jobs
 7、git的裸仓库|panpach
 8、对持续集成的理解https://www.cnblogs.com/wysk/p/7517277.html
-9、Jenkins的备份
+9、Jenkins的备份 https://www.cnblogs.com/luoahong/articles/8313870.html
 10、子类可以通过反射调用父类的构造方法
 11、接口和抽象类的区别
 12、nginx如何通过uptream过滤掉坏了的机器
